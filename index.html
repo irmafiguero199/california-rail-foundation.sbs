@@ -3,78 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>California Rail Foundation | Leading the Future of Sustainable Transit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>California Rail Foundation | Leading Educational Non-Profit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rail-blue: #003366;
-            --rail-gold: #ffcc00;
-            --rail-red: #cc0000;
-            --bg-gray: #f4f4f9;
+            --navy-blue: #0A2342;
+            --gold-accent: #C5A059;
+            --slate-gray: #4A5568;
+            --light-bg: #F7FAFC;
             --white: #ffffff;
-            --text-dark: #1a1a1a;
-            --text-light: #555555;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-gray); color: var(--text-dark); line-height: 1.8; }
-
-        /* Real CSS Logo */
-        .rail-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--rail-blue);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            border: 2px solid var(--rail-gold);
-        }
-        .logo-icon::before {
-            content: '';
-            width: 30px;
-            height: 4px;
-            background: var(--rail-gold);
-            margin: 2px 0;
-            border-radius: 2px;
-        }
-        .logo-text {
-            color: var(--rail-blue);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.2rem;
-            line-height: 1;
-        }
+        body { font-family: 'Ubuntu', sans-serif; background-color: var(--white); color: var(--navy-blue); line-height: 1.8; scroll-behavior: smooth; }
 
         /* Navigation */
         nav {
-            background: var(--white);
-            padding: 15px 5%;
+            background: var(--navy-blue);
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 2000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-bottom: 3px solid var(--gold-accent);
         }
-        .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 25px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--rail-red); }
+        .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.4rem; color: var(--white); text-decoration: none; }
+        .nav-links a { text-decoration: none; color: var(--white); margin-left: 20px; font-weight: 500; transition: 0.3s; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--gold-accent); }
 
-        /* Mega Hero */
+        /* Hero */
         header {
-            height: 95vh;
-            background: linear-gradient(rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.75)), 
-                        url('https://images.pexels.com/photos/2790396/pexels-photo-2790396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            height: 85vh;
+            background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), 
+                        url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -85,193 +48,190 @@
             text-align: center;
             padding: 0 5%;
         }
-        header h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; margin-bottom: 25px; }
-        header p { font-size: 1.4rem; max-width: 900px; margin-bottom: 40px; font-weight: 300; opacity: 0.9; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        header p { font-size: 1.3rem; max-width: 900px; margin-bottom: 30px; font-style: italic; opacity: 0.9; }
 
-        .btn { padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.4s; display: inline-block; }
-        .btn-gold { background: var(--rail-gold); color: var(--rail-blue); }
-        .btn-gold:hover { background: #e6b800; transform: translateY(-5px); }
+        .info-bar { background: var(--gold-accent); color: var(--navy-blue); padding: 15px 5%; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
 
         /* Sections */
-        section { padding: 120px 5%; max-width: 1400px; margin: auto; }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: 3rem; color: var(--rail-blue); margin-bottom: 20px; }
-        .section-header p { font-size: 1.2rem; color: var(--text-light); max-width: 800px; margin: auto; }
+        section { padding: 100px 10%; max-width: 1400px; margin: auto; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 60px; font-size: 2.8rem; color: var(--navy-blue); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--gold-accent); margin: 20px auto; }
 
-        /* Long Mission Styles */
-        .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
-        .mission-content h3 { font-size: 2rem; color: var(--rail-red); margin-bottom: 20px; }
-        .mission-content p { margin-bottom: 25px; font-size: 1.1rem; text-align: justify; }
+        /* Extensive Mission */
+        .mission-detailed { background: var(--light-bg); padding: 80px; border-radius: 20px; border: 1px solid #e2e8f0; margin-bottom: 50px; position: relative; }
+        .mission-detailed p { margin-bottom: 25px; font-size: 1.15rem; color: var(--slate-gray); text-align: justify; }
 
-        /* Feature Cards */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card-img { width: 100%; height: 250px; object-fit: cover; }
-        .card-body { padding: 35px; }
-        .card-body h3 { margin-bottom: 15px; color: var(--rail-blue); }
+        /* Leadership Team */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .team-card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; }
+        .team-card h3 { font-family: 'Playfair Display', serif; color: var(--navy-blue); font-size: 1.5rem; margin-bottom: 10px; }
+        .team-card span { color: var(--gold-accent); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; display: block; margin-bottom: 15px; }
 
-        /* Impact Stats */
-        .stats-bar { background: var(--rail-blue); color: white; padding: 60px 5%; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 30px; }
-        .stat-item h4 { font-size: 3.5rem; color: var(--rail-gold); font-family: 'Montserrat', sans-serif; }
+        /* Gallery - 6 Images */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; height: 280px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .gallery-item:hover img { transform: scale(1.15); }
+        .gallery-caption { position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(10, 35, 66, 0.95)); color: white; width: 100%; padding: 20px; font-size: 0.95rem; text-align: center; }
 
-        /* Footer */
-        footer { background: #001a33; color: #b3c6ff; padding: 100px 5% 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
-        .footer-col h4 { color: white; margin-bottom: 25px; text-transform: uppercase; }
-        .footer-col p, .footer-col li { font-size: 0.95rem; margin-bottom: 12px; list-style: none; }
+        /* Transparency Section */
+        .transparency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .report-btn { display: inline-block; padding: 12px 25px; background: var(--navy-blue); color: white; text-decoration: none; border-radius: 5px; font-size: 0.9rem; margin-top: 15px; }
 
-        @media (max-width: 900px) {
-            .mission-grid, .stats-bar, .footer-grid { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.8rem; }
-        }
+        /* Official Details */
+        .official-details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .detail-card { background: var(--light-bg); padding: 40px; border-radius: 15px; border-top: 6px solid var(--navy-blue); }
+
+        footer { background: var(--navy-blue); color: var(--white); padding: 80px 10% 30px; margin-top: 50px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 60px; }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; font-size: 0.8rem; opacity: 0.6; }
+
+        @media (max-width: 992px) { .official-details, .footer-grid { grid-template-columns: 1fr; } .mission-detailed { padding: 40px; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="rail-logo">
-            <div class="logo-icon"></div>
-            <div class="logo-text">CALIFORNIA RAIL<br><span style="font-size: 0.8rem; color: var(--rail-red);">FOUNDATION</span></div>
-        </a>
+        <a href="#" class="logo">CALIFORNIA RAIL FOUNDATION</a>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#mission">Our Vision</a>
-            <a href="#projects">Initiatives</a>
-            <a href="#legal">Transparency</a>
+            <a href="#mission">Mission</a>
+            <a href="#team">Leadership</a>
+            <a href="#impact">Impact</a>
+            <a href="#official">Reports</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
-        <h1>Modernizing Transit, Connecting Communities</h1>
-        <p>A premier non-profit organization dedicated to advancing safe, efficient, and sustainable rail infrastructure for a stronger California.</p>
-        <a href="#mission" class="btn btn-gold">Explore Our Vision</a>
+        <h1>Education. Preservation. Advocacy.</h1>
+        <p>A leading 501(c)(3) foundation dedicated to the advancement and historical research of rail transportation in the State of California.</p>
     </header>
 
-    <div class="stats-bar">
-        <div class="stat-item"><h4>800+</h4><p>Miles of Advocacy</p></div>
-        <div class="stat-item"><h4>$2B+</h4><p>Infrastructure Support</p></div>
-        <div class="stat-item"><h4>50+</h4><p>Technical Reports</p></div>
-        <div class="stat-item"><h4>100%</h4><p>Non-Profit Status</p></div>
+    <div class="info-bar">
+        FEDERAL TAX ID (EIN): 68-0131222 • PUBLIC CHARITY 501(C)(3) REGISTERED OFFICE: SACRAMENTO, CA
     </div>
 
-    <section id="about">
-        <div class="mission-grid">
-            <div class="mission-content">
-                <h3 id="mission">Our Comprehensive Mission</h3>
-                <p>The California Rail Foundation (CRF) stands at the intersection of environmental sustainability and technical progress. Our mission is to accelerate the transition to a modernized, high-speed rail network that serves as the backbone of California's economy.</p>
-                <p>We believe that rail is more than just transportation; it is a catalyst for social equity. By connecting major urban hubs with underserved rural areas, we create pathways for jobs, education, and healthcare. Our foundation works tirelessly to ensure that every rail dollar is spent with transparency and foresight.</p>
-                <p>Since our inception in Sacramento, we have focused on reducing the state's carbon footprint. By advocating for electrified rail systems, we aim to eliminate thousands of tons of greenhouse gases annually, making California a global leader in green transit innovation.</p>
-                <p>Our commitment extends to the next generation. Through our technical mentorship programs, we are training the engineers and planners who will build the rail corridors of the 2030s and beyond.</p>
-            </div>
-            <div>
-                <img src="https://images.pexels.com/photos/163452/railway-station-platform-tracks-163452.jpeg?auto=compress&cs=tinysrgb&w=600" style="width: 100%; border-radius: 15px; box-shadow: 0 30px 60px rgba(0,0,0,0.15);" alt="Rail Infrastructure">
-                <div style="margin-top: 30px; background: var(--white); padding: 30px; border-left: 8px solid var(--rail-gold); border-radius: 8px;">
-                    <p style="font-style: italic; color: var(--text-light);">"The future of California is on tracks. Efficient rail is the only way to meet our climate goals while supporting a growing population."</p>
-                    <p style="margin-top: 15px; font-weight: bold;">— Board of Directors, CRF</p>
+    <section id="mission">
+        <div class="mission-detailed">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Strategic Mission & Objectives</h2>
+            <p>The California Rail Foundation serves as a vital resource for public education, historical preservation, and sustainable infrastructure research. Founded on the principle that rail is a cornerstone of economic growth, our foundation works tirelessly to document the history of the California rail system while providing data-driven advocacy for its modernization.</p>
+            <p>Our work encompasses the digital archiving of rare historical blueprints, the restoration of heritage rail assets, and the publication of comprehensive reports that inform state policy. We believe in transparency, public service, and the preservation of the engineering marvels that built the Golden State.</p>
+        </div>
+    </section>
+
+    <section id="team" style="background: var(--light-bg); max-width: 100%;">
+        <div style="max-width: 1400px; margin: auto; padding: 0 10%;">
+            <h2 class="section-title">Foundation Leadership</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <h3>Dr. James R. Miller</h3>
+                    <span>Executive Director</span>
+                    <p style="font-size: 0.9rem; color: var(--slate-gray);">Leading organizational strategy and state-level advocacy projects for over 15 years.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Sarah Thompson</h3>
+                    <span>Director of Education</span>
+                    <p style="font-size: 0.9rem; color: var(--slate-gray);">Overseeing university-level research programs and historical archive management.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Marcus G. Washington</h3>
+                    <span>Chairman of the Board</span>
+                    <p style="font-size: 0.9rem; color: var(--slate-gray);">Providing governance and fiduciary oversight for the foundation’s endowments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" style="background: white; max-width: 100%;">
-        <div style="max-width: 1400px; margin: auto; padding: 0 5%;">
-            <div class="section-header">
-                <h2>Strategic Initiatives</h2>
-                <p>Our work spans from technical corridor analysis to public policy advocacy.</p>
+    <section id="impact">
+        <h2 class="section-title">Our Impact in the Field</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1515165597734-92c904245ad1?auto=format&fit=crop&w=600&q=80" alt="Rail Research">
+                <div class="gallery-caption">Site Inspection: Historic Sacramento Rail Hub</div>
             </div>
-            <div class="grid-3">
-                <div class="card">
-                    <img src="https://images.pexels.com/photos/258447/pexels-photo-258447.jpeg?auto=compress&cs=tinysrgb&w=400" class="card-img" alt="High Speed Rail">
-                    <div class="card-body">
-                        <h3>High-Speed Rail Integration</h3>
-                        <p>We lead technical task forces that study the integration of regional rail with the future California High-Speed Rail network, ensuring seamless transfers for millions of passengers.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=400" class="card-img" alt="Research">
-                    <div class="card-body">
-                        <h3>Technical Research Hub</h3>
-                        <p>Our foundation publishes annual "State of the Rail" reports that provide non-partisan data on safety, efficiency, and environmental impact of transit projects.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.pexels.com/photos/1105379/pexels-photo-1105379.jpeg?auto=compress&cs=tinysrgb&w=400" class="card-img" alt="Urban Planning">
-                    <div class="card-body">
-                        <h3>Transit-Oriented Housing</h3>
-                        <p>Advocating for smart urban growth. We support policies that build affordable housing near rail stations to reduce car dependency and improve quality of life.</p>
-                    </div>
-                </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?auto=format&fit=crop&w=600&q=80" alt="Train Restoration">
+                <div class="gallery-caption">Restoration of 19th Century Steam Locomotives</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1444919535311-643037f5d608?auto=format&fit=crop&w=600&q=80" alt="Public Education">
+                <div class="gallery-caption">Community Outreach & Technical Seminars</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="Modern Rail Support">
+                <div class="gallery-caption">Advocacy for High-Speed Rail Integration</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=600&q=80" alt="Archive Management">
+                <div class="gallery-caption">Digitizing 100+ Years of Historical Archives</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab?auto=format&fit=crop&w=600&q=80" alt="Infrastructure Preservation">
+                <div class="gallery-caption">Infrastructure Safety Research & Preservation</div>
             </div>
         </div>
     </section>
 
-    <section id="legal">
-        <div class="section-header">
-            <h2>Non-Profit Compliance</h2>
-        </div>
-        <div class="mission-grid" style="align-items: center;">
-            <div class="card" style="padding: 50px; border-top: 6px solid var(--rail-red);">
-                <h3>Privacy & Data Ethics</h3>
-                <p>California Rail Foundation (CRF) respects the privacy of all donors and partners. We strictly adhere to the California Consumer Privacy Act (CCPA) and ensure that no personal data is sold or shared. Our data collection is limited to essential communications regarding our non-profit mission.</p>
-            </div>
-            <div class="card" style="padding: 50px; border-top: 6px solid var(--rail-blue);">
-                <h3>Legal Transparency</h3>
-                <p>As a registered 501(c)(3) entity (EIN 68-0131222), CRF is committed to absolute transparency. All financial reports and project evaluations are filed according to federal and state regulations. Our resources are dedicated 100% to charitable and educational rail advocacy.</p>
+    <section id="official" style="background: var(--light-bg); max-width: 100%;">
+        <div style="max-width: 1400px; margin: auto; padding: 0 10%;">
+            <h2 class="section-title">Transparency & Reports</h2>
+            <div class="transparency-grid">
+                <div class="detail-card">
+                    <h3>2025 Annual Impact Report</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">A detailed breakdown of our preservation efforts and educational milestones over the last fiscal year.</p>
+                    <a href="#" class="report-btn">View PDF Report</a>
+                </div>
+                <div class="detail-card">
+                    <h3>Financial Disclosures</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Full compliance documentation and non-profit 990-EZ filings available for public review.</p>
+                    <a href="#" class="report-btn">Access Records</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="mission-grid">
-            <div>
-                <h2 style="font-size: 2.5rem; color: var(--rail-blue); margin-bottom: 30px;">Get in Touch</h2>
-                <p style="margin-bottom: 25px;"><strong>📍 Headquarters:</strong> 1730 13th St, Sacramento, CA 95811-5854, USA</p>
-                <p style="margin-bottom: 25px;"><strong>📧 Email:</strong> Richard.Tolmach@california-rail-foundation.sbs</p>
-                <p style="margin-bottom: 25px;"><strong>🆔 Tax ID:</strong> EIN 68-0131222</p>
-                <p><strong>📞 Office:</strong> Monday - Friday, 8:00 AM - 6:00 PM (PST)</p>
+        <h2 class="section-title">Official Contact Information</h2>
+        <div class="official-details">
+            <div class="detail-card">
+                <h3>Sacramento Headquarters</h3>
+                <p style="margin-top: 20px;"><strong>Address:</strong> 1730 13th St, Sacramento, CA 95811-5854</p>
+                <p><strong>Phone:</strong> +1 (916) 555-0198</p>
+                <p><strong>Official Email:</strong> Richard.Tolmach@california-rail-foundation.sbs</p>
             </div>
-            <div style="background: var(--white); padding: 45px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);">
-                <h4 style="margin-bottom: 20px;">Support our mission</h4>
-                <p style="color: var(--text-light); margin-bottom: 20px;">If you are interested in partnering with us or volunteering for our technical research teams, please reach out via email.</p>
-                <div style="background: var(--bg-gray); padding: 20px; border-radius: 8px; text-align: center; border: 1px dashed var(--rail-blue);">
-                    <p style="font-weight: bold; color: var(--rail-blue);">Inquiry Portal: OPEN</p>
-                </div>
+            <div class="detail-card">
+                <h3>Legal Status</h3>
+                <p style="margin-top: 20px;"><strong>Entity Name:</strong> California Rail Foundation</p>
+                <p><strong>EIN:</strong> 68-0131222</p>
+                <p><strong>IRS Status:</strong> Registered 501(c)(3)</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <h4 style="font-size: 1.4rem;">California Rail Foundation</h4>
-                <p>Leading the way in sustainable transportation and infrastructure advocacy for the Golden State.</p>
-                <p>EIN: 68-0131222 | 501(c)(3) Registered</p>
+            <div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold-accent);">California Rail Foundation</h3>
+                <p style="font-size: 0.9rem; margin-top: 20px; opacity: 0.8;">Preserving the past, educating the present, and advocating for the future of rail in the Golden State.</p>
             </div>
-            <div class="footer-col">
-                <h4>Programs</h4>
-                <li><a href="#projects">Corridor Research</a></li>
-                <li><a href="#projects">STEM Mentorship</a></li>
-                <li><a href="#projects">Public Advocacy</a></li>
+            <div>
+                <h4>Resources</h4>
+                <p><a href="#" style="color: white; text-decoration: none; font-size: 0.85rem; display: block; margin-top: 10px;">Privacy Policy</a></p>
+                <p><a href="#" style="color: white; text-decoration: none; font-size: 0.85rem; display: block; margin-top: 5px;">Public Records Request</a></p>
+                <p><a href="#" style="color: white; text-decoration: none; font-size: 0.85rem; display: block; margin-top: 5px;">Terms of Service</a></p>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#legal">Legal & Privacy</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </div>
-            <div class="footer-col">
-                <h4>Location</h4>
-                <p>1730 13th St, Sacramento, CA 95811</p>
-                <p>© 2026 Official Foundation Site. All Rights Reserved.</p>
+            <div>
+                <h4>Official Registry</h4>
+                <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;">1730 13th St, Sacramento, CA 95811</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;">EIN: 68-0131222</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;">© 2026 Official Foundation Site.</p>
             </div>
         </div>
-        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-size: 0.85rem; opacity: 0.6;">
-            Dedicated to the service and development of California's transit future.
+        <div class="footer-bottom">
+            This website is an official public resource for the California Rail Foundation. Our activities are governed by the State of California and Federal law.
         </div>
     </footer>
 
 </body>
-
 </html>
